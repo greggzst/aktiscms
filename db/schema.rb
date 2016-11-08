@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108161030) do
+ActiveRecord::Schema.define(version: 20161108203220) do
+
+  create_table "section_elements", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_section_elements_on_section_id"
+  end
 
   create_table "sections", force: :cascade do |t|
     t.string   "name"

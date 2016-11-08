@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @section_element.title
+%p
+  %b Content:
+  = @section_element.content
+%p
+  %b Section:
+  = @section_element.section
+
+= link_to 'Edit', edit_section_element_path(@section_element)
+\|
+= link_to 'Back', section_elements_path

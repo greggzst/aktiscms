@@ -1,0 +1,1 @@
+json.array! @section_elements, partial: 'section_elements/section_element', as: :section_element

@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title AktisCMS
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-inverse.navbar-static-top
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#main-nav", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{ :href => "#"} Brand
+
+        #main-nav.collapse.navbar-collapse
+          %ul{:class => "nav navbar-nav"}
+            %li= link_to 'Home'
+            %li= link_to 'Contact'
+            %li= link_to 'About Us'
+
+    = yield

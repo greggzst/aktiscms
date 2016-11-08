@@ -6,14 +6,14 @@
         - @section_element.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .form-group
     = f.label :title
-    = f.text_field :title
-  .field
+    = f.text_field :title, :class => "form-control"
+  .form-group
     = f.label :content
-    = f.text_area :content
-  .field
+    = f.text_area :content, :class => "form-control"
+  .form-group
     = f.label :section
-    = f.select :section, @sections
-  .actions
+    = f.select :section, @sections, :class => "form-control"
+  .form-group
     = f.submit 'Save'

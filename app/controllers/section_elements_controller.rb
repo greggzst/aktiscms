@@ -1,4 +1,5 @@
 class SectionElementsController < ApplicationController
+  before_action :get_sections, only: :new
   before_action :set_section_element, only: [:show, :edit, :update, :destroy]
 
   # GET /section_elements
@@ -65,6 +66,10 @@ class SectionElementsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_section_element
       @section_element = SectionElement.find(params[:id])
+    end
+
+    def get_sections
+      @sections = Section.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

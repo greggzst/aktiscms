@@ -1,3 +1,3 @@
 class Section < ApplicationRecord
-	has_may :section_elements
+	has_many :section_elements
 end

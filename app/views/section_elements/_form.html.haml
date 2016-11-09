@@ -11,7 +11,7 @@
     = f.text_field :title, :class => "form-control"
   .form-group
     = f.label :content
-    = f.text_area :content, :class => "form-control"
+    = f.text_area :content, :class => "form-control", :id => "wysiwyg"
   .form-group
     = f.label :section
     = f.select :section_id, @sections, :class => "form-control", prompt: "Select section"

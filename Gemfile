@@ -28,7 +28,7 @@ gem 'haml-rails', :group => :development
 #Bootstrap
 gem 'bootstrap-sass'
 #WYSIWYG
-gem 'trumbowyg_rails'
+gem 'tinymce-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

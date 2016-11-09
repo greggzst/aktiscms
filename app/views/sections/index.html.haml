@@ -1,8 +1,13 @@
-- @sections.each do |section|
-  .row{:id => "#{section.name}"}
-    %h1.section-name= section.name
-    - section.section_elements.each do |element|
-      .col-md-6
-        %h2= element.title
-        .content= element.content
-
+%h1
+  Sections
+  = link_to '', new_section_path, class: "glyphicon glyphicon-plus"
+%table.table.table-bordered
+  %tr
+    %th Name
+    %th Action
+  - @sections.each do |section|
+    %tr
+      %td= section.name
+      %td
+        = link_to '', edit_section_path(section), class: "glyphicon glyphicon-pencil"
+        = link_to '', section_path(section), class: "glyphicon glyphicon-search"

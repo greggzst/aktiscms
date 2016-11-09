@@ -15,7 +15,7 @@
       %tr
         %td= section_element.title
         %td= section_element.content
-        %td= section_element.section
+        %td= section_element.section.name
         %td= link_to 'Show', section_element
         %td= link_to 'Edit', edit_section_element_path(section_element)
         %td= link_to 'Destroy', section_element, :method => :delete, :data => { :confirm => 'Are you sure?' }

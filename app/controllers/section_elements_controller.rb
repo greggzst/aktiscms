@@ -1,5 +1,5 @@
 class SectionElementsController < ApplicationController
-  before_action :get_sections, only: :new
+  before_action :get_sections, only: [:new, :create, :edit, :update]
   before_action :set_section_element, only: [:show, :edit, :update, :destroy]
 
   # GET /section_elements
@@ -69,11 +69,11 @@ class SectionElementsController < ApplicationController
     end
 
     def get_sections
-      @sections = Section.all
+      @sections = Section.all.map{|s| [s.name, s.id]}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_element_params
-      params.require(:section_element).permit(:title, :content, :section_id)
+      params.require(:section_element).permit(:title, :content, :section_id, :visibility)
     end
 end

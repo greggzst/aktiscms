@@ -1,4 +1,5 @@
 class SectionElementsController < ApplicationController
+  before_action :get_section
   before_action :get_sections, only: [:new, :create, :edit, :update]
   before_action :set_section_element, only: [:show, :edit, :update, :destroy]
 
@@ -13,11 +14,6 @@ class SectionElementsController < ApplicationController
   def show
   end
 
-  # GET /section_elements/new
-  def new
-    @section_element = SectionElement.new
-  end
-
   # GET /section_elements/1/edit
   def edit
   end
@@ -25,7 +21,7 @@ class SectionElementsController < ApplicationController
   # POST /section_elements
   # POST /section_elements.json
   def create
-    @section_element = SectionElement.new(section_element_params)
+    @section_element = @section.section_elements.create(section_element_params)
 
     respond_to do |format|
       if @section_element.save
@@ -70,6 +66,10 @@ class SectionElementsController < ApplicationController
 
     def get_sections
       @sections = Section.all.map{|s| [s.name, s.id]}
+    end
+
+    def get_section
+      @section = Section.find(params[:section_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

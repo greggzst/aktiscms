@@ -1,9 +1,23 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h1
+  Section
   = @section.name
+  = link_to '', new_section_section_element_path(@section), class: "glyphicon glyphicon-plus"
 
-= link_to 'Edit', edit_section_path(@section)
+- if @section.section_elements.count == 0
+  %span No section elements. Add one.
+- else  
+  %table.table.table-bordered
+    %tr
+      %th Title
+      %th Content
+      %th Action
+    - @section.section_elements.each do |element|
+      %tr
+        %td= element.title
+        %td= element.content
+        %td
+
 
 = link_to 'Back', sections_path

@@ -1,4 +1,4 @@
-= form_for @section_element do |f|
+= form_for([@section, @section.section_elements.build]) do |f|
   - if @section_element.errors.any?
     #error_explanation
       %h2= "#{pluralize(@section_element.errors.count, "error")} prohibited this section_element from being saved:"

@@ -1,4 +1,4 @@
-= form_for([@section, @section.section_elements.build]) do |f|
+= form_for([@section, @section_element]) do |f|
 
   .form-group
     = f.label :title
@@ -6,9 +6,6 @@
   .form-group
     = f.label :content
     = f.text_area :content, :class => "form-control", :id => "wysiwyg"
-  .form-group
-    = f.label :section
-    = f.select :section_id, @sections, :class => "form-control", prompt: "Select section"
   .form-group
     = f.label :visibility
     = f.check_box :visibility

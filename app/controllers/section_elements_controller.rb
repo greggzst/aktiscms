@@ -1,7 +1,6 @@
 class SectionElementsController < ApplicationController
   before_action :get_section
-  before_action :get_sections, only: [:new, :create, :edit, :update]
-  before_action :set_section_element, only: [:show, :edit, :update, :destroy]
+  before_action :set_section_element, only: [:show, :edit, :update, :destroy, :change_visibility]
 
   def index
     @section_elements = SectionElement.all
@@ -11,6 +10,10 @@ class SectionElementsController < ApplicationController
   end
 
   def edit
+  end
+
+  def new
+    @section_element = @section.section_elements.build
   end
 
   def create
@@ -42,19 +45,21 @@ class SectionElementsController < ApplicationController
   def destroy
     @section_element.destroy
     respond_to do |format|
-      format.html { redirect_to section_elements_url, notice: 'Section element was successfully destroyed.' }
+      format.html { redirect_to @section, notice: 'Section element was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  #changing section element visibility
+  def change_visibility
+    @section_element.visibility = !@section_element.visibility
+    @section_element.save
+    redirect_to @section, notice: "Section element #{@section_element.title} visibility was changed"  
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_section_element
       @section_element = @section.section_elements.find(params[:id])
-    end
-
-    def get_sections
-      @sections = Section.all.map{|s| [s.name, s.id]}
     end
 
     def get_section

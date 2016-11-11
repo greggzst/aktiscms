@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %h1
-  Section
+  Elements of section
   = @section.name
   = link_to '', new_section_section_element_path(@section), class: "glyphicon glyphicon-plus"
 
@@ -18,6 +18,12 @@
         %td= element.title
         %td= element.content
         %td
+          - if element.visibility
+            = link_to '', change_visibility_section_section_element_path(@section,element), class: "glyphicon glyphicon-eye-close"
+          - else
+            = link_to '', change_visibility_section_section_element_path(@section,element), class: "glyphicon glyphicon-eye-open"
+          = link_to '', edit_section_section_element_path(@section,element), class: "glyphicon glyphicon-pencil"
+          = link_to '', section_section_element_path(@section,element), class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: 'Are you sure?' }
 
 
 = link_to 'Back', sections_path

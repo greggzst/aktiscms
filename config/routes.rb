@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :sections do
-  	resources :section_elements
+  	get 'change_visibility', on: :member
+  	resources :section_elements do
+  		get 'change_visibility', on: :member
+  	end
   end
   root 'sections#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

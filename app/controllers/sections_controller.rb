@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_action :set_section, only: [:show, :edit, :update, :destroy, :change_visibility]
 
   def index
     @sections = Section.all
@@ -47,6 +47,24 @@ class SectionsController < ApplicationController
       format.html { redirect_to sections_url, notice: 'Section was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  #changing section visibility
+  def change_visibility
+    if @section.visibility
+      @section.section_elements.each do |element|
+        element.visibility = false
+        element.save
+      end
+    else
+      @section.section_elements.each do |element|
+        element.visibility = true
+        element.save
+      end
+    end
+    @section.visibility = !@section.visibility
+
+    @section.save
+    redirect_to sections_url, notice: "Section #{@section.name} visibility was changed" 
   end
 
   private

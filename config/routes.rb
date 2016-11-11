@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   		get 'change_visibility', on: :member
   	end
   end
-  root 'sections#index'
+  root 'sections#list'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

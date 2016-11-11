@@ -1,6 +1,10 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy, :change_visibility]
 
+  def list
+    @sections = Section.all.select {|s| s.visibility}
+  end
+
   def index
     @sections = Section.all
   end

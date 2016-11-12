@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :links
   resources :sections do
   	get 'change_visibility', on: :member
   	resources :section_elements do

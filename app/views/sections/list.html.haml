@@ -1,7 +1,4 @@
 - @sections.each do |section|
   .row{:id => "#{section.name}"}
     %h1.section-name= section.name
-    - section.section_elements.each do |element|
-      .col-md-4
-        %h2= element.title
-        .content= element.content
+    = render section.section_elements

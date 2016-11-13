@@ -1,19 +1,19 @@
-%h1 Listing links
+%p#notice= notice
 
-%table
+%h1 
+  Links
+  = link_to '', new_link_path, class: "glyphicon glyphicon-plus"
+
+%table.table.table-bordered
   %thead
     %tr
-      %th
-      %th
-      %th
-
-  %tbody
+      %th Name
+      %th URL
+      %th Actions
     - @links.each do |link|
       %tr
         %td= link_to 'Show', link
         %td= link_to 'Edit', edit_link_path(link)
         %td= link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Link', new_link_path

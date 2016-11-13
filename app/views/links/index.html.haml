@@ -12,8 +12,10 @@
       %th Actions
     - @links.each do |link|
       %tr
-        %td= link_to 'Show', link
-        %td= link_to 'Edit', edit_link_path(link)
-        %td= link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link.name
+        %td= link.url
+        %td
+          = link_to '', edit_link_path(link),class: "glyphicon glyphicon-pencil"
+          = link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 

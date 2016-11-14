@@ -17,7 +17,11 @@
           %td= link.name
           %td= link.url
           %td
+            - if link.visibility
+              = link_to '', change_visibility_link_path(link), class: "glyphicon glyphicon-eye-close"
+            - else
+              = link_to '', change_visibility_link_path(link), class: "glyphicon glyphicon-eye-open"
             = link_to '', edit_link_path(link),class: "glyphicon glyphicon-pencil"
-            = link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to '', link, class: "glyphicon glyphicon-trash", :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 

@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, only: [:show, :edit, :update, :destroy, :change_visibility]
 
   # GET /links
   # GET /links.json
@@ -59,6 +59,12 @@ class LinksController < ApplicationController
       format.html { redirect_to links_url, notice: 'Link was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def change_visibility
+    @link.visibility = !@link.visibility
+    @link.save
+    redirect_to links_url, notice: "Link #{@link.name} visibility was changed" 
   end
 
   private

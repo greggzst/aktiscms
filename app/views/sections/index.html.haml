@@ -3,17 +3,20 @@
 %h1
   Sections
   = link_to '', new_section_path, class: "glyphicon glyphicon-plus"
-%table.table.table-bordered
-  %tr
-    %th Name
-    %th Action
-  - @sections.each do |section|
+- if @sections.count == 0
+  %span No section elements. Add one.
+- else    
+  %table.table.table-bordered
     %tr
-      %td= section.name
-      %td
-        - if section.visibility
-          = link_to '', change_visibility_section_path(section), class: "glyphicon glyphicon-eye-close"
-        - else
-          = link_to '', change_visibility_section_path(section), class: "glyphicon glyphicon-eye-open"
-        = link_to '', edit_section_path(section), class: "glyphicon glyphicon-pencil"
-        = link_to '', section_path(section), class: "glyphicon glyphicon-search"
+      %th Name
+      %th Action
+    - @sections.each do |section|
+      %tr
+        %td= section.name
+        %td
+          - if section.visibility
+            = link_to '', change_visibility_section_path(section), class: "glyphicon glyphicon-eye-close"
+          - else
+            = link_to '', change_visibility_section_path(section), class: "glyphicon glyphicon-eye-open"
+          = link_to '', edit_section_path(section), class: "glyphicon glyphicon-pencil"
+          = link_to '', section_path(section), class: "glyphicon glyphicon-search"

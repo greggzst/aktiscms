@@ -3,19 +3,21 @@
 %h1 
   Links
   = link_to '', new_link_path, class: "glyphicon glyphicon-plus"
-
-%table.table.table-bordered
-  %thead
-    %tr
-      %th Name
-      %th URL
-      %th Actions
-    - @links.each do |link|
+- if @links.count == 0
+  %span No section elements. Add one.
+- else   
+  %table.table.table-bordered
+    %thead
       %tr
-        %td= link.name
-        %td= link.url
-        %td
-          = link_to '', edit_link_path(link),class: "glyphicon glyphicon-pencil"
-          = link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Name
+        %th URL
+        %th Actions
+      - @links.each do |link|
+        %tr
+          %td= link.name
+          %td= link.url
+          %td
+            = link_to '', edit_link_path(link),class: "glyphicon glyphicon-pencil"
+            = link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 

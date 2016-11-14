@@ -54,7 +54,7 @@ class SectionsController < ApplicationController
   end
   #changing section visibility
   def change_visibility
-    if @section.visibility
+    if @section.visibility?
       @section.section_elements.each do |element|
         element.visibility = false
         element.save

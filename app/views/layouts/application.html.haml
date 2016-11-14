@@ -20,6 +20,7 @@
         #main-nav.collapse.navbar-collapse
           %ul{:class => "nav navbar-nav"}
             %li= link_to 'Menu Builder', links_path
+            %li= link_to 'Sections', sections_path
             - @visible_links.each do |link|
               %li= link_to link.name, link.url
 

@@ -6,6 +6,6 @@ class Section < ApplicationRecord
 	private
 		#setting section refname
 		def set_refname
-			self.refname = self.name.downcase.gsub(/\?|!|,/,"").split(" ").join("_")
+			self.refname = self.name.downcase.gsub(/\?|!|,|'/,"").split(" ").join("_")
 		end
 end

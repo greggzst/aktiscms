@@ -15,13 +15,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{ :href => "#"} Brand
+          = link_to 'Brand', root_path, class: "navbar-brand"
 
         #main-nav.collapse.navbar-collapse
           %ul{:class => "nav navbar-nav"}
-            %li= link_to 'Home'
-            %li= link_to 'Contact'
-            %li= link_to 'About Us'
+            %li= link_to 'Menu Builder', links_path
+            - @visible_links.each do |link|
+              %li= link_to link.name, link.url
 
     .container
       = yield

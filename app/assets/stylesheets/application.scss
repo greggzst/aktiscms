@@ -19,6 +19,20 @@ body{
 	background: #FAFAFA;
 }
 
+a{
+	color: #00BFFF;
+}
+
+a:visited{
+	color: #00BFFF;
+}
+
+a:hover{
+	color: #666;
+	text-decoration: none;
+	background: inherit;
+}
+
 .table{
 	background: white;
 }

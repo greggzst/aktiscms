@@ -4,7 +4,7 @@ class Section < ApplicationRecord
 	before_save :set_refname
 
 	private
-		#setting section refname
+		#setting section refname by deleting all unneccessary marks and replacing spaces with _ symbols
 		def set_refname
 			self.refname = self.name.downcase.gsub(/\?|!|,|'/,"").split(" ").join("_")
 		end

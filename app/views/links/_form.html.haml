@@ -11,9 +11,9 @@
     = f.text_field :name, :class => "form-control"
   .form-group
     = f.label :url
-    = f.select :url, @sections_refnames,:class => "form-control"
+    = f.select :url, @sections_refnames , :class => "form-control"
   .form-group
     = f.label :visibility
     = f.check_box :visibility        
   .form-group
-    = f.submit 'Save'
+    = f.submit 'Save', :class => "btn btn-default"

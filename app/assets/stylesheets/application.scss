@@ -35,14 +35,15 @@ body{
   flex-direction: column;
 }
 
-footer.footer{
+.footer{
+	position: static;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	height: 40px;
 	width: 100%;
 	background: #101010;
 	color: #9d9d9d;
-}
-
-.footer{
 	margin-top: 20px;
 	box-sizing: border-box;
 	padding: 10px;

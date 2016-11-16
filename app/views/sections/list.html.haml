@@ -1,4 +1,6 @@
-- @sections.each do |section|
-  .row{:id => "#{section.refname}"}
-    %h1.section-name= section.name
-    = render section.section_elements
+- cache @sections do
+  - @sections.each do |section|
+    - cache section do
+      .row{:id => "#{section.refname}"}
+        %h1.section-name= section.name
+        = render section.section_elements

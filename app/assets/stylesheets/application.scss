@@ -34,3 +34,16 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+footer.footer{
+	height: 40px;
+	width: 100%;
+	background: #101010;
+	color: #9d9d9d;
+}
+
+.footer{
+	margin-top: 20px;
+	box-sizing: border-box;
+	padding: 10px;
+}

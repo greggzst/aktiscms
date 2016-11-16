@@ -24,7 +24,7 @@
             - @visible_links.each do |link|
               %li= link_to link.name, link.url
 
-    .container
+    .container#content
       = yield
 
     %footer.footer= "&copy; Grzegorz Jakubiak".html_safe

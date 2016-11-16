@@ -17,6 +17,8 @@
 @import "bootstrap";
 body{
 	background: #FAFAFA;
+	min-height: 100vh;
+	position: relative;
 }
 
 a{
@@ -37,6 +39,7 @@ a:hover{
 	background: white;
 }
 
+/* same colum size */
 .elements {
   display: -webkit-box;
   display: -webkit-flex;
@@ -50,9 +53,7 @@ a:hover{
 }
 
 .footer{
-	position: static;
-	left: 0;
-	right: 0;
+	position: absolute;
 	bottom: 0;
 	height: 40px;
 	width: 100%;

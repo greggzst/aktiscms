@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+  before_action :get_sections_ref_names
   before_action :set_link, only: [:show, :edit, :update, :destroy, :change_visibility]
 
   # GET /links
@@ -71,6 +72,10 @@ class LinksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_link
       @link = Link.find(params[:id])
+    end
+    #get section name and corresponding refname so a link can reference to this name
+    def get_sections_ref_names
+      @sections_refnames = Section.all.map{|s| [s.name, "#" + s.refname]}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

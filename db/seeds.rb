@@ -14,7 +14,7 @@ Section.create(id: 3 ,name: 'How to use it?', visibility: true)
 Section.create(id: 4 ,name: "Hey! I'm invisible", visibility: false)
 
 Section.all.each do |s|
-      Link.create(name: s.name, url: s.refname, visibility: true)
+      Link.create(name: s.name, url: "#" + s.refname, visibility: s.visibility?)
 end
 
 SectionElement.create(title: 'Simple CMS', 

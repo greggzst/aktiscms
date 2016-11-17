@@ -61,7 +61,7 @@ class LinksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  #changing link visibility
   def change_visibility
     @link.visibility = !@link.visibility
     @link.save

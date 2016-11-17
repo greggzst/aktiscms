@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
 
   protected
   	def get_visible_links
-  		@visible_links = Link.all.select{|l| l.visibility}
+  		@visible_links = Link.all.select{|l| l.visibility} #getting visible links
   	end
 end

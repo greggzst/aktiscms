@@ -52,6 +52,10 @@ a:hover{
   flex-direction: column;
 }
 
+#content .row:last-child{
+	margin-bottom: 60px;
+}
+
 .footer{
 	position: absolute;
 	bottom: 0;
@@ -59,7 +63,6 @@ a:hover{
 	width: 100%;
 	background: #101010;
 	color: #9d9d9d;
-	margin-top: 20px;
 	box-sizing: border-box;
 	padding: 10px;
 }

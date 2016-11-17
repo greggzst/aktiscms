@@ -1,0 +1,6 @@
+menubar: false
+resize: false
+toolbar:
+  - styleselect | bold italic | undo redo | link
+plugins:
+  - link

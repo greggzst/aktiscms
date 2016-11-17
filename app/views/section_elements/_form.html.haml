@@ -5,9 +5,10 @@
     = f.text_field :title, :class => "form-control"
   .form-group
     = f.label :content
-    = f.text_area :content, :class => "form-control", :id => "wysiwyg"
+    = f.text_area :content, :class => "tinymce form-control", :rows => 30, :cols => 120
   .form-group
     = f.label :visibility
     = f.check_box :visibility
   .form-group
     = f.submit 'Save', :class => "btn btn-default"
+    = tinymce

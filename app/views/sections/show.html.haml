@@ -16,7 +16,7 @@
     - @section.section_elements.each do |element|
       %tr
         %td= element.title
-        %td= element.content
+        %td= element.content.html_safe
         %td
           - if element.visibility
             = link_to '', change_visibility_section_section_element_path(@section,element), class: "glyphicon glyphicon-eye-close"

@@ -1,24 +1,16 @@
-# README
+# AktisCMS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Very simple CMS written in Rails 5. It makes use of Haml, SASS, Bootstrap,TinyMCE.
+It allows you to create simple website based on Bootstrap row-column design.
+It uses sections to store small subsections called section's elements in which you hold your content.
+It gives you MenuBuilder so you can associate links with sections and create external links.
 
-Things you may want to cover:
+# To run it
 
-* Ruby version
+```
+bundle install
 
-* System dependencies
+ruby bin\rails db:seed
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ruby bin\rails s
+```

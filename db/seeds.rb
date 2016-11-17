@@ -7,10 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Section.delete_all
 SectionElement.delete_all
+Link.delete_all
 Section.create(id: 1 ,name: 'What is AktisCMS?', visibility: true)
 Section.create(id: 2 ,name: 'What it gives?', visibility: true)
 Section.create(id: 3 ,name: 'How to use it?', visibility: true)
 Section.create(id: 4 ,name: "Hey! I'm invisible", visibility: false)
+
+Section.all.each do |s|
+      Link.create(name: s.name, url: s.refname, visibility: true)
+end
+
 SectionElement.create(title: 'Simple CMS', 
 	content:
 	%{<p>

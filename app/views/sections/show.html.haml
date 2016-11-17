@@ -22,7 +22,7 @@
             = link_to '', change_visibility_section_section_element_path(@section,element), class: "glyphicon glyphicon-eye-close"
           - else
             = link_to '', change_visibility_section_section_element_path(@section,element), class: "glyphicon glyphicon-eye-open"
-          = link_to '', edit_section_section_element_path(@section,element), class: "glyphicon glyphicon-pencil"
+          = link_to '', edit_section_section_element_path(@section,element), class: "glyphicon glyphicon-pencil", 'data-no-turbolink' => true
           = link_to '', section_section_element_path(@section,element), class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: 'Are you sure?' }
 
 

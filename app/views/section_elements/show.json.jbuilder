@@ -1,1 +1,0 @@
-json.partial! "section_elements/section_element", section_element: @section_element
